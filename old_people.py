@@ -63,8 +63,8 @@ def print_name_and_age(name_and_age_list):
     cur.execute(name_and_age_list)
     name_and_age_result = cur.fetchall()
 
-    for a in name_and_age_result: 
-       print(f'name and age of this particular person is: {a}')
+    for name, age in name_and_age_result: 
+       print(f'{name} age is {age} ')
    
     
 def save_name_and_age_to_csv(name_and_age_list, csv_path):
