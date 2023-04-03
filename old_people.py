@@ -88,9 +88,7 @@ def save_name_and_age_to_csv(name_and_age_list, csv_path):
     neat_Data = pd.DataFrame(Data)
     report_header = ('Name', 'Age')
     neat_Data.to_csv(csv_path, index=False, header=report_header)
-    #csv_path = os.getenv('TEMP')
-    #with open (neat_Data) as p:
-    #    p.write(csv_path)
+    
     return csv_path
 
 def get_script_dir():
