@@ -64,7 +64,7 @@ def print_name_and_age(name_and_age_list):
     name_and_age_result = cur.fetchall()
 
     for name, age in name_and_age_result: 
-       print(f'{name} age is {age} ')
+       print(f'{name} is {age} years old.')
    
     
 def save_name_and_age_to_csv(name_and_age_list, csv_path):
@@ -86,7 +86,8 @@ def save_name_and_age_to_csv(name_and_age_list, csv_path):
     cur.execute(name_and_age_list)
     Data = cur.fetchall()
     neat_Data = pd.DataFrame(Data)
-    neat_Data.to_csv(csv_path, index=False)
+    report_header = ('Name', 'Age')
+    neat_Data.to_csv(csv_path, index=False, header=report_header)
     #csv_path = os.getenv('TEMP')
     #with open (neat_Data) as p:
     #    p.write(csv_path)
